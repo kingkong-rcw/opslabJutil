@@ -699,6 +699,9 @@ public final class FileUtil {
      */
     public final static String suffix(File file){
         String fileName=file.getName();
+        return suffix(fileName);
+    }
+    public final static String suffix(String fileName){
         return fileName.substring(fileName.indexOf(".")+1);
     }
 }
