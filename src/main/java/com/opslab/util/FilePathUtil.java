@@ -1,5 +1,8 @@
 package com.opslab.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * 文件名及文件路径相关的操作
  */
@@ -26,6 +29,25 @@ public final class FilePathUtil {
      */
     public final static String commandPath(String file) {
         return file.replaceAll("\\\\{1,}", "/").replaceAll("\\/{2,}", "/");
+    }
+
+    /**
+     * 根据日期获取文件目录
+     * @param format
+     * @return
+     */
+    public final static String getDatePath(Date date,String format){
+        if(StringUtil.isEmpty(format)){
+            format="yyyy/MM/dd";
+        }
+        if(date==null){
+            date = new Date();
+        }
+        String path = "/"+new SimpleDateFormat(format).format(date);
+        return path;
+    }
+    public final static String getDatePath(){
+        return getDatePath(null,null);
     }
 
 
