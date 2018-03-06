@@ -13,6 +13,8 @@ public class XMLUtilTest {
         stupid.setAge(2);
         stupid.setName("sb");
         stupid.setShortStory("blablabla....");
+        String[] hobbies = new String[]{"aa","bb","cc"};
+        stupid.setHobbies(hobbies);
 
         String xml = XMLUtil.stringify(stupid);
         System.out.println("xml=\n"+xml);
@@ -36,6 +38,11 @@ public class XMLUtilTest {
         private String name;
         private int age;
         private String shortStory;
+        private String[] hobbies;
+
+        public void setHobbies(String[] hobbies) {
+            this.hobbies = hobbies;
+        }
 
         public String getName() {
             return name;
@@ -60,6 +67,10 @@ public class XMLUtilTest {
 
         public void setShortStory(String shortStory) {
             this.shortStory = shortStory;
+        }
+
+        public String[] getHobbies() {
+            return hobbies;
         }
     }
 }
